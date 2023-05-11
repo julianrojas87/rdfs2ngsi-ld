@@ -438,8 +438,16 @@ describe("RDFS 2 NGSI-LD conversion library", () => {
         type: "https://smartdatamodels.org/dataModel.OSLO/BicycleParkingStation",
         "https://smartdatamodels.org/dataModel.OSLO/ParkingFacility.capacity": {
           type: "Property",
-          value: "27",
-          observedAt: "2022-09-08T10:11:03",
+          value: {
+            type: "https://smartdatamodels.org/dataModel.OSLO/Capacity",
+            "https://smartdatamodels.org/dataModel.OSLO/Capacity.total": {
+              type: "Property",
+              value: "27",
+              observedAt: "2022-09-08T10:11:03"
+            },
+            observedAt: "2022-09-08T10:11:03"
+          },
+          observedAt: "2022-09-08T10:11:03"
         },
         "https://smartdatamodels.org/name": {
           type: "Property",

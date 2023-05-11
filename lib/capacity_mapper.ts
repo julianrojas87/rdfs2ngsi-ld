@@ -27,8 +27,17 @@ export const mapCapacity = (rootObjects: any[]): any[] => {
     return rootObjects;
   }
 
-  const capacityProperty =
-    capacity["https://smartdatamodels.org/dataModel.OSLO/Capacity.total"];
+  const capacityProperty = {
+    "type": "Property",
+    "value": {
+      "type": "https://smartdatamodels.org/dataModel.OSLO/Capacity",
+      "https://smartdatamodels.org/dataModel.OSLO/Capacity.total":
+        capacity["https://smartdatamodels.org/dataModel.OSLO/Capacity.total"],
+      "observedAt": capacity["observedAt"]
+    },
+    "observedAt": capacity["observedAt"]
+  };
+
   if (!capacityProperty) {
     // oups, nothing we can do
     return rootObjects;
