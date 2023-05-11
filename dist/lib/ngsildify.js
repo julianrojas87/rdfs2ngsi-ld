@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ngsildify = void 0;
 const context_mapper_1 = require("./context_mapper");
+const capacity_mapper_1 = require("./capacity_mapper");
 const { parse } = require('wkt');
 class Ngsildify {
     constructor(options) {
@@ -74,7 +75,7 @@ class Ngsildify {
                 rootObjects.push(tempHandleRoot);
         }
         this.resultArray.push(...rootObjects);
-        return this.resultArray;
+        return (0, capacity_mapper_1.mapCapacity)(this.resultArray);
     }
     async handleRoot(input) {
         if (typeof input === "object" && (input["@id"] || input["id"])) {
